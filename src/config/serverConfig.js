@@ -6,3 +6,4 @@ module.exports={
     PORT: process.env.PORT,
     Name:process.env.Name,
 }
+//That's it. process.env now has the keys and values you defined in your .env file:
