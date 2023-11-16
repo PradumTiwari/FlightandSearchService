@@ -34,3 +34,24 @@
 
 --Once you've added your db config as listed above,go to the src folder from your terminal and execute 'npx sequelize db:create'
 
+
+## Db Design
+ - Airplane Table
+ - Flight
+ - Airport
+ - City
+ //Whimsical or lucidechart for design
+ //Different datanse for different services
+
+
+ -A Flight belongs to an airplane but one airplane can be used in multiple flights
+ -A city has many airports but one airport belongs to  a city
+ -One airport can have many flights,but a flight belongs to oone airport
+
+ npx sequelize model:generate --name <Model-name> --attributes name:string
+ naming convention for models in mvc
+
+
+
+ ## Flights table
+ -
