@@ -1,24 +1,22 @@
-const express=require('express');
-const bodyParser=require('body-parser');
+const express = require("express");
+const bodyParser = require("body-parser");
 
-const {PORT}=require('./config/serverConfig')
-const {Name}=require('./config/serverConfig');
+const { PORT } = require('./config/serverConfig');
+const ApiRoutes = require('./routes/index');
 
-const {City}=require('./models/index');
-const setupAndStartServer=async()=>{
-//create the express obj
-   const app=express();
+const setupAndStartServer = async () => {
 
-   app.use(bodyParser.json());
-   app.use(bodyParser.urlencoded({extended:true}));
+    // create the express object
+    const app = express();
 
-    app.listen(3000,()=>{
-    console.log(`Server started at ${PORT}`);
-      console.log(City);
-   })
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({extended: true}));
 
+    app.use('/api', ApiRoutes);
+
+    app.listen(PORT, async () => {
+        console.log(`Server started at ${PORT}`);
+    });
 }
-
-//install dotenv
 
 setupAndStartServer();

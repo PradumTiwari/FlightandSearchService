@@ -1,23 +1,10 @@
 {
-  "development": {
-    "username": "root",
-    "password": "Pradum@123",
-    "database": "Fight_And_Search",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "development": {
+      "username": "Pradum",
+      "password":"Pradum@123",
+      "database": "fight_and_search",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
   }
-}
+  

@@ -1,9 +1,7 @@
-const dotenv=require('dotenv');
+const dotenv = require('dotenv');
 
 dotenv.config();
 
-module.exports={
-    PORT: process.env.PORT,
-    Name:process.env.Name,
+module.exports = {
+    PORT: process.env.PORT
 }
-//That's it. process.env now has the keys and values you defined in your .env file:
