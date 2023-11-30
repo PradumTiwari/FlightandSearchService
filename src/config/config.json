@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "Pradum",
-      "password":"Pradum@123",
+      "password":/*Your Password*/,
       "database": "fight_and_search",
       "host": "127.0.0.1",
       "dialect": "mysql"
