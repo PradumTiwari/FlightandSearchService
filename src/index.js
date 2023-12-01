@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const { PORT } = require('./config/serverConfig');
 const ApiRoutes = require('./routes/index');
 
+const db = require('./models/index');
+// const {Airplane} = require('./models/index');
+
 const setupAndStartServer = async () => {
 
     // create the express object
@@ -14,8 +17,14 @@ const setupAndStartServer = async () => {
 
     app.use('/api', ApiRoutes);
 
+    app.get('/',  (req,res) => {
+        res.send('Welcome to Crud Api Project for Cities');
+    });
     app.listen(PORT, async () => {
         console.log(`Server started at ${PORT}`);
+        if(process.env.SYNC_DB) {
+            db.sequelize.sync({alter: true});
+        }
     });
 }
 
