@@ -5,7 +5,7 @@ const { PORT } = require('./config/serverConfig');
 const ApiRoutes = require('./routes/index');
 
 const db = require('./models/index');
-// const {Airplane} = require('./models/index');
+const {City,Airport}= require('./models/index');
 
 const setupAndStartServer = async () => {
 
@@ -16,15 +16,24 @@ const setupAndStartServer = async () => {
     app.use(bodyParser.urlencoded({extended: true}));
 
     app.use('/api', ApiRoutes);
-
-    app.get('/',  (req,res) => {
-        res.send('Welcome to Crud Api Project for Cities');
-    });
-    app.listen(PORT, async () => {
+    
+    
+  
+    app.listen(3000, async () => {
         console.log(`Server started at ${PORT}`);
-        if(process.env.SYNC_DB) {
-            db.sequelize.sync({alter: true});
+        if(process.env.SYNC_DB){
+            db.sequelize.sync({alter:true});
+            //it will sync the database
         }
+    const city=await City.findOne({
+        where:{
+            id:6
+        }
+    })
+    const airports=await city.getAirports();
+    console.log(city,airports);
+    
+
     });
 }
 
