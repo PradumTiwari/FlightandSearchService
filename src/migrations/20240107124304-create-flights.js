@@ -42,7 +42,8 @@ module.exports = {
         type: Sequelize.STRING,
       },
       totalSeats: {
-        type: Sequelize.INTEGER,allowNull: false,
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

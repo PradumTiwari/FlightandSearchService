@@ -12,32 +12,36 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-
-    await queryInterface.bulkInsert('Airports', [
+    await queryInterface.bulkInsert('Airplanes', [
       {
-        name: 'Kempegowda International Airport',
-        cityId: 4,
-        createdAt: new Date(),
+       modelNumber: 'Boeing-737',
+       capacity: 300,
+       createdAt: new Date(),
         updatedAt: new Date()
-      },
-      {
-        name: 'Mysuru Airport',
-        cityId: 4,
-        createdAt: new Date(),
+     },
+     {
+      modelNumber: 'AirBus-A320',
+      capacity: 300,
+      createdAt: new Date(),
         updatedAt: new Date()
-      },
-      {
-        name: 'Mengaluru International Airport',
-        cityId: 4,
-        createdAt: new Date(),
+    },
+    {
+      modelNumber: 'Boeing-777',
+      capacity: 300,
+      createdAt: new Date(),
         updatedAt: new Date()
-      },
-      {
-        name: 'Indira Gandhi International Airport',
-        cityId: 2,
-        createdAt: new Date(),
+    },
+    {
+      modelNumber: 'AirBus-A380',
+      capacity: 300,
+      createdAt: new Date(),
         updatedAt: new Date()
-      }
+    },{
+      modelNumber: 'A-100',
+      capacity: 300,
+      createdAt: new Date(),
+        updatedAt: new Date()
+    }
     ], {});
   },
 
@@ -48,6 +52,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-
+    await queryInterface.bulkDelete('Airplanes', null, {});
   }
 };
